@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Lucy Esperanza ❤️</title>
+<style>
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  color: #fff4ff;
+  background: radial-gradient(ellipse at top, #30205c, #080b24 70%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+#estrellas, #corazones {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+#estrellas { z-index: 0; }
+#corazones { z-index: 5; }
+.estrella {
+  position: absolute;
+  color: white;
+  animation: brillar 2s infinite alternate;
+}
+@keyframes brillar {
+  from { opacity: .25; }
+  to { opacity: 1; }
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px 6px;
+  background: #080b24ed;
+  border-bottom: 1px solid #ff8bd455;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+nav a:hover { background: #ff8bd433; }
+main, footer { position: relative; z-index: 1; }
+.portada {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 45px 20px;
+}
+.luna {
+  font-size: 75px;
+  animation: flotar 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 22px #c5a6ff);
+}
+@keyframes flotar {
+  50% { transform: translateY(-13px); }
+}
+h1 {
+  font-size: clamp(38px, 8vw, 72px);
+  color: #ff9bda;
+  text-shadow: 0 0 24px #ed65ff77;
+  margin: 16px 0;
+}
+.frase {
+  max-width: 650px;
+  line-height: 1.9;
+  font-size: 19px;
+}
+button {
+  border: 0;
+  border-radius: 28px;
+  padding: 13px 22px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ed63b8, #8659e8);
+  box-shadow: 0 0 20px #c45aff44;
+}
+button:hover { filter: brightness(1.12); }
+.seccion {
+  width: min(950px, calc(100% - 30px));
+  margin: auto;
+  padding: 55px 0;
+  scroll-margin-top: 65px;
+}
+h2 {
+  color: #ff9bda;
+  text-align: center;
+  font-size: clamp(28px, 6vw, 40px);
+}
+.subtitulo {
+  text-align: center;
+  color: #d9caff;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+.tarjeta {
+  background: #171638cc;
+  border: 1px solid #c5a6ff66;
+  border-radius: 22px;
+  padding: 24px;
+  line-height: 1.9;
+}
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.foto {
+  overflow: hidden;
+  border-radius: 15px;
+  background: #28204f;
+  border: 1px solid #ff9bda66;
+}
+.foto img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+.foto p { text-align: center; padding: 5px; font-size: 13px; }
+.carta {
+  display: none;
+  background: #fff0f8;
+  color: #432546;
+  padding: clamp(20px, 5vw, 38px);
+  margin-top: 20px;
+  border-radius: 10px 25px;
+  font-size: 18px;
+  line-height: 2;
+  animation: aparecer .7s ease;
+}
+.carta.visible { display: block; }
+.carta h3 { text-align: center; color: #a83e90; }
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.centro { text-align: center; }
+audio { width: 100%; margin-top: 16px; }
+.corazon {
+  position: absolute;
+  bottom: -40px;
+  animation: subir linear forwards;
+}
+@keyframes subir {
+  to { transform: translateY(-110vh) rotate(30deg); opacity: 0; }
+}
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  border-top: 1px solid #ff9bda44;
+  line-height: 2;
+}
+@media (max-width: 550px) {
+  nav { gap: 2px; }
+  nav a { font-size: 12px; padding: 8px; }
+  .galeria { grid-template-columns: 1fr; }
+  .foto img { aspect-ratio: 4 / 3; }
+  .frase { font-size: 17px; }
+}
+</style>
+</head>
+<body>
+<div id="estrellas"></div>
+<div id="corazones"></div>
+
+<nav>
+  <a href="#inicio">Inicio 🌙</a>
+  <a href="#fotos">Nuestros recuerdos 📸</a>
+  <a href="#carta">Mi carta 💌</a>
+  <a href="#musica">Música 🎵</a>
+</nav>
+
+<main>
+  <section class="portada" id="inicio">
+    <div class="luna">🌙</div>
+    <p>UNA PERSONA MUY ESPECIAL</p>
+    <h1>Lucy Esperanza</h1>
+    <p class="frase">
+      Para ti, mamá, que haces que mi mundo sea más bonito.
+      Esta pequeña página está hecha con todo mi amor. 💗
+    </p>
+    <button onclick="document.querySelector('#carta').scrollIntoView()">
+      Tengo algo para ti 💌
+    </button>
+  </section>
+
+  <section class="seccion" id="fotos">
+    <h2>Nuestros recuerdos 📸</h2>
+    <p class="subtitulo">
+      Cada recuerdo contigo tiene un lugar especial en mi corazón.
+    </p>
+    <div class="galeria">
+      <div class="foto">
+        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=700&q=80" alt="Familia compartiendo un momento">
+        <p>Mi lugar favorito es contigo ❤️</p>
+      </div>
+      <div class="foto">
+        <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=700&q=80" alt="Personas celebrando juntas">
+        <p>Momentos que valen oro ✨</p>
+      </div>
+      <div class="foto">
+        <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=700&q=80" alt="Personas disfrutando juntas">
+        <p>Recuerdos para siempre 🌷</p>
+      </div>
+    </div>
+    <p class="subtitulo" style="margin-top:20px">
+      Estas son fotos de ejemplo. Después puedes reemplazarlas por vuestras fotos.
+    </p>
+  </section>
+
+  <section class="seccion" id="carta">
+    <h2>Una carta para ti 💌</h2>
+    <p class="subtitulo">Hay palabras que nacen directamente del corazón.</p>
+    <div class="centro">
+      <button id="abrirCarta">Abrir mi carta secreta 💗</button>
+    </div>
+    <article class="carta" id="contenidoCarta">
+      <h3>Para mi adorada mamá ❤️</h3>
+      <p>Mi querida Lucy Esperanza:</p>
+      <p>
+        Eres mi adoración y lo más preciado de este mundo.
+        No existen palabras suficientes para explicar todo el amor
+        que siento por ti.
+      </p>
+      <p>
+        Mis promesas no son solo palabras, sino metas a corto plazo
+        que quiero cumplir con hechos. Quiero que cada día puedas
+        sentir lo mucho que significas para mí.
+      </p>
+      <p>
+        Gracias por ser una persona tan especial en mi vida.
+        Siempre llevaré tu cariño en mi corazón y quiero darte
+        muchas razones para sonreír y sentirte orgullosa.
+      </p>
+      <p>Te amo, mamá. ❤️</p>
+      <p style="text-align:right">Con todo mi amor,<br>Heackel 💗</p>
+    </article>
+  </section>
+
+  <section class="seccion" id="musica">
+    <h2>Nuestra música 🎵</h2>
+    <p class="subtitulo">Una melodía para acompañar este pequeño detalle.</p>
+    <div class="tarjeta centro">
+      <div style="font-size:45px">🎶🌙💗</div>
+      <p>Una canción especial para ti</p>
+      <audio controls preload="none">
+        <source src="musica.mp3" type="audio/mpeg">
+        Tu navegador no puede reproducir este audio.
+      </audio>
+      <p style="font-size:13px">
+        Para escuchar música, añade tu archivo de audio llamado musica.mp3.
+      </p>
+    </div>
+  </section>
+
+  <section class="seccion centro">
+    <div class="tarjeta">
+      <h2>Un abrazo hasta las estrellas ✨</h2>
+      <p class="frase">
+        Aunque el cielo se haga oscuro, mi cariño por ti
+        seguirá brillando. Gracias por ser mi mamá.
+      </p>
+      <button id="lluvia">Llenar la pantalla de corazones 💗</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Hecho con amor por Heackel para Lucy Esperanza ❤️<br>
+  Una pequeña página, un amor inmenso. 🌙
+</footer>
+
+<script>
+const estrellas = document.getElementById("estrellas");
+
+for (let i = 0; i < 75; i++) {
+  const estrella = document.createElement("span");
+  estrella.className = "estrella";
+  estrella.textContent = Math.random() > 0.5 ? "✦" : "·";
+  estrella.style.left = Math.random() * 100 + "%";
+  estrella.style.top = Math.random() * 100 + "%";
+  estrella.style.fontSize = (Math.random() * 12 + 5) + "px";
+  estrella.style.animationDelay = Math.random() * 3 + "s";
+  estrellas.appendChild(estrella);
+}
+
+document.getElementById("abrirCarta").addEventListener("click", function() {
+  const carta = document.getElementById("contenidoCarta");
+  carta.classList.toggle("visible");
+  this.textContent = carta.classList.contains("visible")
+    ? "Cerrar mi carta 💌"
+    : "Abrir mi carta secreta 💗";
+});
+
+function crearCorazon() {
+  const capa = document.getElementById("corazones");
+  const corazon = document.createElement("span");
+  corazon.className = "corazon";
+  corazon.textContent = ["💗", "💖", "💕", "💘", "❤️"][Math.floor(Math.random() * 5)];
+  corazon.style.left = Math.random() * 100 + "%";
+  corazon.style.fontSize = (Math.random() * 20 + 14) + "px";
+  corazon.style.animationDuration = (Math.random() * 3 + 3) + "s";
+  capa.appendChild(corazon);
+  setTimeout(() => corazon.remove(), 6500);
+}
+
+setInterval(crearCorazon, 1200);
+
+document.getElementById("lluvia").addEventListener("click", function() {
+  for (let i = 0; i < 35; i++) {
+    setTimeout(crearCorazon, i * 100);
+  }
+});
+</script>
+</body>
+</html>
